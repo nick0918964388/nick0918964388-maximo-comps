@@ -67,9 +67,9 @@ const calculateAllSitesData = () => {
   const sites = ['HL2', 'HL3', 'ONS'] as const;
 
   return months.map((month, index) => {
-    const monthData = { month };
+    const monthData: { month: string; [key: string]: string | number } = { month };
     sites.forEach((site) => {
-      monthData[`${site}`] = siteData[site][index].completionRate;
+      monthData[site] = siteData[site][index].completionRate;
     });
     return monthData;
   });

@@ -25,7 +25,7 @@ import { PAGE_TITLES } from '../../config/titles';
 const sites = ['ALL', 'HL2', 'HL3', 'ONS'] as const;
 type SiteType = typeof sites[number];
 
-function classNames(...classes: string[]) {
+function classNames(...classes: (string | boolean | undefined)[]) {
   return classes.filter(Boolean).join(' ');
 }
 
